@@ -30,15 +30,8 @@ public class FindSumAndDifOfTwoDigits {
         int sum = scanner.nextInt();
         System.out.println("Please enter the second digit: ");
         int dif = scanner.nextInt();
-        int outPut1 = (sum-dif)/2;
-        int outPut2 = sum-outPut1;
-        if((-100 <= sum && sum <=150) && (-100 <=dif && dif<=150)) {
-            if (outPut1 < sum) {
-                System.out.println(outPut1 + "\n" + outPut2);
-            } else {
-                System.out.println(outPut2 + "\n" + outPut1);
-            }
-        }
-        
+        int a =  (sum + dif) / 2;
+        System.out.println("The bigest number : " + a);
+        System.out.println("The smallest number is : " + (sum - a));
     }
 }
