@@ -90,18 +90,17 @@ public class ArithmeticOperationsBasedOnSpecificRules {
      * @param args
      */
 
-    public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
-        String color = in.nextLine();
-        StringBuilder sb = new StringBuilder(color);
-        int val = 0;
-        for(int i = 0; i<color.length(); i++){
-            val += Integer.valueOf(sb.charAt(i), 16);
+//
+//        String color = in.nextLine();
+//        StringBuilder sb = new StringBuilder(color);
+//        int val = 0;
+//        for(int i = 0; i<color.length(); i++){
+//            val += Integer.valueOf(sb.charAt(i), 16);
+//
+//            System.out.println(val);
 
-            System.out.println(val);
 
 
-        }
 
     }
     /**
@@ -122,28 +121,28 @@ public class ArithmeticOperationsBasedOnSpecificRules {
      * Output
      * 4
      */
-    class Solution {
+//    class Solution {
+//
+//        public static void main(String args[]) {
+//            Scanner in = new Scanner(System.in);
+//            long N = in.nextLong();
+//            int count=0;
+//            // Write an answer using System.out.println()
+//            // To debug: System.err.println("Debug messages...");
+//            while(N!=1){
+//                if(N%2==0){
+//                    N=N/2;
+//                    count++;
+//                }
+//                else{
+//                    N=3*N+1;
+//                    count++;
+//                }
+//            }
+//            System.out.println(count);
+//        }
+  //  }
 
-        public static void main(String args[]) {
-            Scanner in = new Scanner(System.in);
-            long N = in.nextLong();
-            int count=0;
-            // Write an answer using System.out.println()
-            // To debug: System.err.println("Debug messages...");
-            while(N!=1){
-                if(N%2==0){
-                    N=N/2;
-                    count++;
-                }
-                else{
-                    N=3*N+1;
-                    count++;
-                }
-            }
-            System.out.println(count);
-        }
-    }
 
 
-
-}
+//}
