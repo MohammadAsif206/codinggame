@@ -29,7 +29,27 @@ public class MyArrayList {
                 iArray.remove(iArray.indexOf(i));
             }
         }
-        System.out.println("Even with even values were removed: "+iArray.toString());
+        System.out.println("Elements with even values were removed: "+iArray.toString());
+
+
+        /**
+         *  addAll method(int index, Collection c), returns if collections succesfully added
+         */
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        for(int i = 10; i< 20; i++){
+            arrayList.add(i);
+        }
+        iArray.addAll(0,arrayList);
+        System.out.println("Content of arrayList added at index 0 of iArray: "+iArray.toString());
+
+        /**
+         * removeIf will remove based on a given predicate
+         * for example in the code block below it will remove even numbers from iArray
+         */
+        iArray.removeIf(n-> (n%2 ==0));
+        System.out.println(iArray);
+
+        
 
     }
 }
