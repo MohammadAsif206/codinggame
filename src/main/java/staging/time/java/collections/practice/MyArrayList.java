@@ -49,7 +49,13 @@ public class MyArrayList {
         iArray.removeIf(n-> (n%2 ==0));
         System.out.println(iArray);
 
-        
+        /**
+         * retainAll methods
+         */
+        iArray.retainAll(arrayList);
+        System.out.println(iArray.toString());
+
+
 
     }
 }
