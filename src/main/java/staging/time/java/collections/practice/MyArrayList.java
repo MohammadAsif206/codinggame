@@ -50,10 +50,26 @@ public class MyArrayList {
         System.out.println(iArray);
 
         /**
-         * retainAll methods
+         * retainAll methods will retain only the elements of the object passed to as an argument
+         * for example in the code block below iArray will contain only the content of the arrayList
          */
         iArray.retainAll(arrayList);
         System.out.println(iArray.toString());
+
+        /**
+         * forEach for ArrayList
+         */
+        //add some more elements to iArray
+        iArray.addAll(0,arrayList);
+        iArray.forEach(n->{
+            n = n*10;
+            System.out.print(n+" ");
+        });
+        System.out.println("Before applying removeRange method: "+iArray);
+
+        System.out.println("After applying removeRange method: "+iArray.toString());
+
+
 
 
 
