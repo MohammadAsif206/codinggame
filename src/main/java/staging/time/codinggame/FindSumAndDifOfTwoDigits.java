@@ -1,6 +1,6 @@
 package staging.time.codinggame;
-
 import java.util.Scanner;
+
 
 /**
  *You have a sum and difference of two numbers. Your task is to find these numbers.
@@ -33,5 +33,51 @@ public class FindSumAndDifOfTwoDigits {
         int a =  (sum + dif) / 2;
         System.out.println("The bigest number : " + a);
         System.out.println("The smallest number is : " + (sum - a));
+        ;
+    }
+
+    /**
+     * The game mode is REVERSE: You do not have access to the statement. You have to guess what to do by observing the following set of tests:
+     * 01 Test 1
+     * Input
+     * Expected output
+     * 0x7f000001
+     * 127.0.0.1
+     * 02 Test 2
+     * Input
+     * Expected output
+     * 0xc0a80001
+     * 192.168.0.1
+     * 03 Test 3
+     * Input
+     * Expected output
+     * 0x77777777
+     * 119.119.119.119
+     * 04 Test 4
+     * Input
+     * Expected output
+     * 0x00000000
+     * 0.0.0.0
+     * 05 Test 5
+     * Input
+     * Expected output
+     * 0xffffffff
+     * 255.255.255.255
+     */
+    /**
+     * The method will convert hex value of IPv4 and print it in decimal do notation
+     * @param hex
+     */
+    public static void IPv4IsInHexPrintInDecimalDotNotation(String hex){
+        String val="";
+        int count = 0;
+        for(int i = 2; i<hex.length(); i+=2){
+            val+= Integer.valueOf(hex.substring(i, i+2), 16);
+            if(count<3) {
+                val+= ".";
+                count++;
+            }
+        }
+        System.out.println(val);
     }
 }

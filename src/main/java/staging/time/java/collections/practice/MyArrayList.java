@@ -59,15 +59,18 @@ public class MyArrayList {
         /**
          * forEach for ArrayList
          */
+        String s = "Mohammad Asif";
+        char [] chr = s.toCharArray();
         //add some more elements to iArray
         iArray.addAll(0,arrayList);
         iArray.forEach(n->{
-            n = n*10;
             System.out.print(n+" ");
         });
-        System.out.println("Before applying removeRange method: "+iArray);
+        for(Character c : chr){
+            System.out.print(c);
+        }
 
-        System.out.println("After applying removeRange method: "+iArray.toString());
+
 
 
 
