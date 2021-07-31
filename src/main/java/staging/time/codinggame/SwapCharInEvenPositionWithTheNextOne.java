@@ -4,16 +4,23 @@ import java.util.Scanner;
 
 public class SwapCharInEvenPositionWithTheNextOne {
     public static void main(String args[]) {
-        Scanner in = new Scanner(System.in);
+//        Scanner in = new Scanner(System.in);
+//
+//        String s = in.nextLine();
+//
+//        // first solution
+//        swapCharInEvenPosWithTheNextChar(s);
+//        // second solution
+//        swapCharInEvenPosWithTheNextChar1(s);
+//        //print value of n in different types based on the msg command
+//        printNBasdedOnCommandMsg(15,"D");
 
-        String s = in.nextLine();
+        System.out.println("Convert Binary into Hexadecimal");
+        SwapCharInEvenPositionWithTheNextOne sw = new SwapCharInEvenPositionWithTheNextOne();
+        long binary = 1111;
+        int ss = sw.binToHex(binary);
 
-        // first solution
-        swapCharInEvenPosWithTheNextChar(s);
-        // second solution
-        swapCharInEvenPosWithTheNextChar1(s);
-        //print value of n in different types based on the msg command
-        printNBasdedOnCommandMsg(15,"D");
+        System.out.println(ss);
     }
 
     public static void swapCharInEvenPosWithTheNextChar(String s) {
@@ -80,5 +87,29 @@ public class SwapCharInEvenPositionWithTheNextOne {
 
 
     }
+    private int binToHex(long binary){
+        int decimalNumber = 0, i = 0;
+        while(binary > 0){
+            decimalNumber+= Math.max(2,i++)*(binary % 10);
+            decimalNumber/= 10;
+        }
+        return decimalNumber;
+    }
+    /**
+     * Given a list of positive and negative numbers, output the sorted squared values containing only unique values
+     * Input
+     * Line 1: the number N of integers in the list.
+     * Line 2: N space-separated integers from -100 to 100.
+     * Output
+     * Line 1 : Unique Sorted Squared Array
+     * Constraints
+     * 1 ≤ N ≤ 100
+     * Example
+     * Input
+     * 5
+     * -2 -1 0 1 2
+     * Output
+     * [0, 1, 4]
+     */
 
 }
