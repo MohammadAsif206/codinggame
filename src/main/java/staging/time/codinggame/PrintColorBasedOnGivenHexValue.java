@@ -1,11 +1,10 @@
 package staging.time.codinggame;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class PrintColorBasedOnGivenHexValue {
     public static void main(String[] args) {
+
         Scanner in = new Scanner(System.in);
         System.out.println("Please enter the RGB color preceded with #, eg. #FFFFFF");
 
@@ -23,6 +22,16 @@ public class PrintColorBasedOnGivenHexValue {
         System.out.println("Please enter the estimated arrival time in the format hh:mm:ss");
         String t2 = in.nextLine();
         reportTheStatusOfFlight(t, t2);
+
+        //partition the shelf
+        partitionTheShelf();
+        System.out.println("Please enter a string mixed of upper case and lower case");
+        String lcuc = in.nextLine();
+        System.out.println("The absolute diff between the count of their occurrence is: ");
+        differenceBetweenCountofUpperAndLowerCase(lcuc);
+
+        // insert a word into a sentence, replacing '_'
+        insertAWordInAString();
 
 
     }
@@ -193,6 +202,108 @@ public class PrintColorBasedOnGivenHexValue {
             System.out.println("EARLY");
 
     }
+    /**
+     * Alph, Brittany, and Captain Charlie are rationing their supplies of fruit juice.
+     *
+     * The crew have a certain number of containers full of juice on a shelf, with some containers storing more nutritional value than others. These are all the supplies they will have for the next three days. The crew wishes to consume roughly the same amount of nutrition every day, and to have a single day's containers be contiguous, because the shelf's design allows only the leftmost container currently on the shelf to be removed.
+     *
+     * Given a depiction of the shelf, place two "|" characters between the locations on the shelf such that the shelf is divided into three sections with the sums of the three sections having the least possible range and each section having at least one container.
+     *
+     * It is guaranteed that there is exactly one unique solution that minimizes range.
+     * Input
+     * Line 1: One integer N, the number of containers on the shelf.
+     * Line 2: The shelf, containing N space-separated integers C_i, the nutritional value stored by each container.
+     * Output
+     * Line 1: The same shelf (line 2 of input) with two "|" characters inserted at the optimal positions.
+     *
+     * There is exactly one correct output for each test case.
+     * Constraints
+     * 3 ≤ N ≤ 25
+     *
+     * 1 ≤ C_i ≤ 10 000 000
+     * Example
+     * Input
+     * 6
+     * 5 5 3 7 8 2
+     * Output
+     * 5 5 | 3 7 | 8 2
+     */
+    public static void partitionTheShelf() {
+
+        int N = 6; // Number of containers on the shelf.
+        String shelf = "5 5 3 7 8 2"; // The shelf.
+
+        int l = shelf.length() / 3;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < l; i++) {
+            sb.append(shelf.charAt(i));
+        }
+        System.out.print(sb);
+        System.out.print(" |");
+        StringBuilder sb1 = new StringBuilder();
+        for (int i = l; i <= l + l; i++) {
+            sb1.append(shelf.charAt(i));
+        }
+        System.out.print(sb1);
+        System.out.print(" |");
+        StringBuilder sb2 = new StringBuilder();
+
+        for (int i = (l * 2)+1; i <= (l * 3)+1; i++) {
+            sb2.append(shelf.charAt(i));
+        }
+        System.out.println(sb2);
+
+
+    }
+    /**
+     * While Ignoring any special chars and spaces, output the absolute difference between uppercase and lowercase character count.
+     * Input
+     * A string s of one line with almost any kind of printable ASCII characters.
+     * Output
+     * The resulting integer
+     * Constraints
+     * s does not contain any whitespace characters except for spaces. It may contain uppercase and lowercase letters as well as digits and special chars.
+     * s is not longer than 1000 chars.
+     * Example
+     * Input
+     * Pretty simple
+     * Output
+     * 10
+     */
+    public static void differenceBetweenCountofUpperAndLowerCase(String s) {
+        int u = 0, l = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (Character.isLetter(s.charAt(i)) && Character.isUpperCase(s.charAt(i))) {
+                u++;
+            }
+            if (Character.isLetter(s.charAt(i)) && Character.isLowerCase(s.charAt(i))) {
+                l++;
+            }
+        }
+        System.out.print(Math.abs(u - l));
+    }
+    public static void insertAWordInAString(){
+        String statement = "Hello my _ is Mohammad Asif";
+        String word = "name";
+
+        String [] sp = statement.split(" ");
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0 ; i <sp.length; i++){
+               builder.append(sp[i]+" ");
+
+        }
+
+        int index = sp[0].length();
+        int index1 = sp[1].length();
+
+        builder.replace(index+index1+1, index+index1+3," "+word);
+        System.out.println(builder.toString());
+
+
+    }
+
+
+
 }
 
 
